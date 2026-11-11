@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<title>JalaliKit</title>
+<meta name='description' content='Convert between Jalali (Shamsi) and Gregorian dates, browse a Jalali calendar and count days between dates.'>
+<link rel='icon' href='assets/logo.svg' type='image/svg+xml'>
+<link rel='stylesheet' href='styles.css'>
+</head>
+<body>
+<header class='top'>
+  <div class='brand'><img src='assets/logo.svg' alt='' width='28' height='28'><span>JalaliKit</span></div>
+  <button id='theme' class='icon' type='button' aria-label='Toggle theme'><svg viewBox='0 0 24 24'><path d='M20 14A8 8 0 1 1 10 4a6.5 6.5 0 0 0 10 10z'/></svg></button>
+</header>
+<main>
+  <section class='card today'>
+    <p class='dim'>Today</p>
+    <p id='t-fa' class='big' lang='fa' dir='rtl'></p>
+    <p id='t-en' class='dim'></p>
+    <div class='row'><button id='t-copy' class='primary' type='button'>Copy</button></div>
+  </section>
+
+  <section class='card cal' aria-label='Jalali calendar'>
+    <div class='cal-head'><button id='c-prev' type='button' aria-label='Previous month'>&lsaquo;</button><h2 id='c-title' lang='fa' dir='rtl'></h2><button id='c-next' type='button' aria-label='Next month'>&rsaquo;</button></div>
+    <p id='c-sub' class='dim center'></p>
+    <div id='c-grid' class='grid' lang='fa' dir='rtl'></div>
+    <p class='dim center small'>Click a day to convert it. Fridays are tinted.</p>
+  </section>
+
+  <section class='card'>
+    <h2>Gregorian to Jalali</h2>
+    <label>Date<input id='g-in' type='date'></label>
+    <p id='g-out' class='out' lang='fa' dir='rtl'></p>
+    <p id='g-out-en' class='dim'></p>
+  </section>
+
+  <section class='card'>
+    <h2>Jalali to Gregorian</h2>
+    <div class='row3'>
+      <label>Year<input id='j-y' type='number' min='1' max='3000'></label>
+      <label>Month<select id='j-m'></select></label>
+      <label>Day<input id='j-d' type='number' min='1' max='31'></label>
+    </div>
+    <p id='j-out' class='out'></p>
+  </section>
+
+  <section class='card'>
+    <h2>Days between</h2>
+    <div class='row2'><label>From<input id='d-a' type='date'></label><label>To<input id='d-b' type='date'></label></div>
+    <p id='d-out' class='out'></p>
+    <p id='d-sub' class='dim'></p>
+  </section>
+</main>
+<div id='toast' class='toast' role='status' aria-live='polite'></div>
+<script src='jalali.js'></script>
+<script src='app.js'></script>
+</body>
+</html>

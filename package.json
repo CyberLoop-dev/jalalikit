@@ -1,0 +1,8 @@
+{
+  "name": "jalalikit",
+  "version": "1.0.0",
+  "description": "Jalali (Shamsi) and Gregorian date converter, calendar and day counter.",
+  "private": true,
+  "license": "MIT",
+  "scripts": { "test": "node jalali.test.js" }
+}
